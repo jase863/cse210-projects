@@ -42,5 +42,4 @@ class Program
         
         return squaredNumber;
     }
-    
 }
