@@ -1,6 +1,6 @@
 public class Entry
 {
-    public string prompt, entry, date;
+    public string _prompt, _entry, _date;
 
     public string EntryCSV(Entry entry)
     {
@@ -8,12 +8,12 @@ public class Entry
         // entry.entry.ToString();
         // entry.date.ToString();
 
-        return ($"{entry.date}|{entry.prompt}|{entry.entry}");
+        return ($"{entry._date}|{entry._prompt}|{entry._entry}");
     }
 
     public void DisplayEntry()
     {
-        Console.WriteLine($"{date} - {prompt}\n{entry}\n");
+        Console.WriteLine($"{_date} - {_prompt}\n{_entry}\n");
     }
 
     public void DisplayLoadedEntry()
@@ -28,7 +28,7 @@ public class Entry
             string prompt = data[1];
             string entry = data[2];
         }
-        Console.WriteLine($"{date} - {prompt}\n{entry}\n");
+        Console.WriteLine($"{_date} - {_prompt}\n{_entry}\n");
 
     }
     

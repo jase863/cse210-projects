@@ -36,7 +36,7 @@ class Program
                 Entry newEntry = new Entry();
 
                 // intialize entry variable for while loop
-                newEntry.entry = "";
+                newEntry._entry = "";
 
                 // initialize variable for confirmation of entry to be added
                 string confirmEntry = "no";
@@ -48,26 +48,26 @@ class Program
                     DateTime dateNow = DateTime.Now;
 
                     // converting the date to a string
-                    newEntry.date = dateNow.ToShortDateString();
+                    newEntry._date = dateNow.ToShortDateString();
 
                     // generate a random prompt to display
-                    newEntry.prompt = promptsList.Generator();
+                    newEntry._prompt = promptsList.Generator();
 
                     // insert a blank line for good whitespace
                     Console.WriteLine();
 
                     // display prompt
-                    Console.WriteLine(newEntry.prompt);
+                    Console.WriteLine(newEntry._prompt);
 
 
                     // respond to prompt
-                    newEntry.entry = Console.ReadLine();
+                    newEntry._entry = Console.ReadLine();
                     
                     // loop to confirm whether entry should be added or rewritten
-                    while (confirmEntry.ToLower() == "no" && newEntry.entry != "new prompt")
+                    while (confirmEntry.ToLower() == "no" && newEntry._entry != "new prompt")
                     {
                         // show entry back to user and give the option to save it
-                        Console.WriteLine($"\nYour entry: {newEntry.entry}");
+                        Console.WriteLine($"\nYour entry: {newEntry._entry}");
                         Console.Write("\nWould you like to save it? ");
                     
                         // confirm save (yes or no)
@@ -76,10 +76,10 @@ class Program
                         if (confirmEntry.ToLower() == "no")
                         {
                             Console.WriteLine("Please type a new entry or type 'new prompt':");
-                            newEntry.entry = Console.ReadLine();
+                            newEntry._entry = Console.ReadLine();
                         }   
                     }  
-                } while (newEntry.entry == "new prompt");
+                } while (newEntry._entry == "new prompt");
 
                 Console.WriteLine("\nEntry Saved");
 

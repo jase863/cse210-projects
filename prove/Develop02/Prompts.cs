@@ -1,6 +1,6 @@
 public class Prompts
 {
-    List<string> prompts = new List<string>() {"What is something that made you smile today?",
+    List<string> _prompts = new List<string>() {"What is something that made you smile today?",
     "Did anything funny happen?",
     "How did the Lord speak to you?",
     "Did you do anything fun?",
@@ -10,8 +10,8 @@ public class Prompts
     public string Generator()
     {
         Random Generator = new Random();
-        int randomIndex = Generator.Next(0, prompts.Count);
+        int randomIndex = Generator.Next(0, _prompts.Count);
         
-        return prompts[randomIndex];
+        return _prompts[randomIndex];
     }
 }
