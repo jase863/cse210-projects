@@ -39,7 +39,7 @@ class Program
                 newEntry._entry = "";
 
                 // initialize variable for confirmation of entry to be added
-                string confirmEntry = "no";
+                string confirmEntry = "";
 
                 // do...while loop to allow for a new prompt if desired
                 do
@@ -64,7 +64,7 @@ class Program
                     newEntry._entry = Console.ReadLine();
                     
                     // loop to confirm whether entry should be added or rewritten
-                    while (confirmEntry.ToLower() == "no" && newEntry._entry != "new prompt")
+                    while (confirmEntry.ToLower() != "no" && confirmEntry.ToLower() != "yes" && newEntry._entry != "new prompt")
                     {
                         // show entry back to user and give the option to save it
                         Console.WriteLine($"\nYour entry: {newEntry._entry}");

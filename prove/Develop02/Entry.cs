@@ -4,9 +4,9 @@ public class Entry
 
     public string EntryCSV(Entry entry)
     {
-        // entry.prompt.ToString();
-        // entry.entry.ToString();
-        // entry.date.ToString();
+        entry._prompt.ToString();
+        entry._entry.ToString();
+        entry._date.ToString();
 
         return ($"{entry._date}|{entry._prompt}|{entry._entry}");
     }
@@ -16,20 +16,9 @@ public class Entry
         Console.WriteLine($"{_date} - {_prompt}\n{_entry}\n");
     }
 
-    public void DisplayLoadedEntry()
+    public void DisplayLoadedEntry(string entry)
     {
-        Journal journal = new Journal();
-
-        foreach (string entryPart in journal.strEntries)
-        {
-            string [] data = entryPart.Split("|");
-
-            string date = data[0];
-            string prompt = data[1];
-            string entry = data[2];
-        }
-        Console.WriteLine($"{_date} - {_prompt}\n{_entry}\n");
-
+        Console.WriteLine(entry);
     }
     
 }

@@ -10,9 +10,11 @@ public class Journal
         entries.Add(entry);
     }
 
-    public void AddLoadedEntry(string entry)
+    public List<string> AddLoadedEntry(string entry)
     {
         strEntries.Add(entry);
+
+        return strEntries;
     }
 
     public void SaveToFile(string file, Journal journalInfo)
@@ -41,29 +43,32 @@ public class Journal
    public void LoadFile(string fileToOpen)
    {
         Journal journalCSV = new Journal();
-        List<string> entries = new List<string>();
+        List<string> strEntries = new List<string>();
         
         string [] savedEntry = System.IO.File.ReadAllLines(fileToOpen);
-
-        foreach (string entryPart in savedEntry)
-        {
-            string [] data = entryPart.Split("|");
-
-            string date = data[0];
-            string prompt = data[1];
-            string entry = data[2];
-
-
-            journalCSV.AddLoadedEntry($"{date}|{prompt}|{entry}");
-
-        }
+        
         using (StreamWriter outputFile = new StreamWriter(fileToOpen))
         {
-            foreach (string entry in journalCSV.strEntries)
+            foreach (string entryPart in savedEntry)
             {
+                string [] data = entryPart.Split("|");
 
-                outputFile.WriteLine(entry);
+                string date = data[0];
+                string prompt = data[1];
+                string entry = data[2];
 
+
+                journalCSV.AddLoadedEntry($"{date}|{prompt}|{entry}");
+
+            }
+            
+            {
+                foreach (string entry in journalCSV.strEntries)
+                {
+                    
+                    outputFile.WriteLine(entry);
+
+                }
             }
         }
    }
@@ -81,7 +86,21 @@ public class Journal
    public void DiplayLoaded()
    {
     Entry holdEntry = new Entry();
+    Journal journalCSV = new Journal();
 
-    holdEntry.DisplayLoadedEntry();
+    foreach (string entryPart in journalCSV.strEntries)
+        {
+            string [] data = entryPart.Split("|");
+
+            string date = data[0];
+            string prompt = data[1];
+            string entry = data[2];
+
+            string wholeEntry = ($"{date} - {prompt}\n{entry}");
+
+            holdEntry.DisplayLoadedEntry(wholeEntry);
+        }
+
+    
    }
 }
