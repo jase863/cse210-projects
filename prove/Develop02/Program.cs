@@ -110,10 +110,21 @@ class Program
                 Console.Write("What is the name of the file (do not add '.csv' or any other extension)? ");
                 string fileToOpen = Console.ReadLine() + ".csv";
                 
-               journalInfo.LoadFile(fileToOpen);
-            }
-                
-        }
+               List<string> hopeItWorks = new List<string>();
+               hopeItWorks = journalInfo.LoadFile(fileToOpen);
 
-    } 
+               foreach(string journalEntry in hopeItWorks)
+               {
+                    
+                    journalInfo.strEntries.Add(journalEntry);
+               }
+
+               foreach(string entry1 in journalInfo.strEntries)
+               {
+                    Console.WriteLine(entry1);
+               }
+            }
+
+        } 
+    }
 }

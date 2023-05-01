@@ -40,15 +40,13 @@ public class Journal
         LoadFile(file);
     }
 
-   public void LoadFile(string fileToOpen)
+   public List<string> LoadFile(string fileToOpen)
    {
         Journal journalCSV = new Journal();
         List<string> strEntries = new List<string>();
         
         string [] savedEntry = System.IO.File.ReadAllLines(fileToOpen);
         
-        using (StreamWriter outputFile = new StreamWriter(fileToOpen))
-        {
             foreach (string entryPart in savedEntry)
             {
                 string [] data = entryPart.Split("|");
@@ -62,15 +60,8 @@ public class Journal
 
             }
             
-            {
-                foreach (string entry in journalCSV.strEntries)
-                {
-                    
-                    outputFile.WriteLine(entry);
-
-                }
-            }
-        }
+            return strEntries;
+        
    }
 
    public void DisplayAll()
