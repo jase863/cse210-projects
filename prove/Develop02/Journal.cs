@@ -10,13 +10,6 @@ public class Journal
         entries.Add(entry);
     }
 
-    public List<string> AddLoadedEntry(string entry)
-    {
-        strEntries.Add(entry);
-
-        return strEntries;
-    }
-
     public void SaveToFile(string file, Journal journalInfo)
     {
         // add entries to csv
@@ -32,8 +25,8 @@ public class Journal
 
             foreach (string loaded in journalInfo.strEntries)
             {
-                // add CSV read strings to CSV file
-                Console.WriteLine(loaded);
+                // // add CSV read strings to CSV file
+                // Console.WriteLine(loaded);
                 outputFile.WriteLine(loaded);
             }
         }
@@ -56,7 +49,7 @@ public class Journal
                 string entry = data[2];
 
 
-                journalCSV.AddLoadedEntry($"{date}|{prompt}|{entry}");
+                strEntries.Add($"{date}|{prompt}|{entry}");
 
             }
             
@@ -66,32 +59,13 @@ public class Journal
 
    public void DisplayAll()
    { 
+    Entry displayed = new Entry();
+    Journal newJournal = new Journal();
 
     foreach (Entry entry in entries)
     {
         entry.DisplayEntry();
     }
-
-   }
-   
-   public void DiplayLoaded()
-   {
-    Entry holdEntry = new Entry();
-    Journal journalCSV = new Journal();
-
-    foreach (string entryPart in journalCSV.strEntries)
-        {
-            string [] data = entryPart.Split("|");
-
-            string date = data[0];
-            string prompt = data[1];
-            string entry = data[2];
-
-            string wholeEntry = ($"{date} - {prompt}\n{entry}");
-
-            holdEntry.DisplayLoadedEntry(wholeEntry);
-        }
-
     
    }
 }

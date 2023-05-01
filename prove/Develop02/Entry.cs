@@ -13,12 +13,6 @@ public class Entry
 
     public void DisplayEntry()
     {
-        Console.WriteLine($"{_date} - {_prompt}\n{_entry}\n");
+        Console.WriteLine($"\n{_date} - {_prompt}\n{_entry}");
     }
-
-    public void DisplayLoadedEntry(string entry)
-    {
-        Console.WriteLine(entry);
-    }
-    
 }

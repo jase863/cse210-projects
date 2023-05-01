@@ -93,6 +93,19 @@ class Program
                 Journal journal = new Journal();
                 journalInfo.DisplayAll();
 
+                foreach (string loaded in journalInfo.strEntries)
+                {
+                    string [] data = loaded.Split("|");
+
+                    string date = data[0];
+                    string prompt = data[1];
+                    string entry = data[2];
+
+
+                    Console.WriteLine($"\n{date} - {prompt}\n{entry}");
+
+                }
+
             }
 
             // option 3 for saving to a file
@@ -109,20 +122,10 @@ class Program
             {   
                 Console.Write("What is the name of the file (do not add '.csv' or any other extension)? ");
                 string fileToOpen = Console.ReadLine() + ".csv";
-                
-               List<string> hopeItWorks = new List<string>();
-               hopeItWorks = journalInfo.LoadFile(fileToOpen);
 
-               foreach(string journalEntry in hopeItWorks)
-               {
-                    
-                    journalInfo.strEntries.Add(journalEntry);
-               }
+                List<string> hopeItWorks = new List<string>();
+                journalInfo.strEntries = journalInfo.LoadFile(fileToOpen);
 
-               foreach(string entry1 in journalInfo.strEntries)
-               {
-                    Console.WriteLine(entry1);
-               }
             }
 
         } 
