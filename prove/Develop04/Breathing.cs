@@ -13,7 +13,7 @@ public class Breathing : Activity
 
 
     // user decides how long to breathe in and out; parameter is the duration specified by the user
-    public void BreathePrompts(int duration)
+    private void BreathePrompts(int duration)
     {   
         Console.Write("Choose how many seconds you would like to breathe in: ");
         int inLength = int.Parse(Console.ReadLine());

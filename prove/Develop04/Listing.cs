@@ -17,13 +17,13 @@ public class Listing : Activity
     }
 
     // gets a random prompt for the user
-    public string GetRandomPrompt()
+    private string GetRandomPrompt()
     {
         return _listingPrompts[GetRandomInt(_listingPrompts.Count)];
     }
 
     // instructions for the user
-    public void DisplayListing()
+    private void DisplayListing()
     {
         Console.WriteLine("\nList as many responses as you can to the following prompt:\n");
 
@@ -32,7 +32,7 @@ public class Listing : Activity
     }
 
     // gets listed information and saves it to a temporary list
-    public void ListInput(int duration)
+    private void ListInput(int duration)
     {   
         List<string> listed = new List<string>{};
 

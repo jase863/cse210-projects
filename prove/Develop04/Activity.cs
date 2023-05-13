@@ -42,13 +42,13 @@ public class Activity
         WaitAnimation(3);
     }
 
-    public int SetDuration()
+    protected int SetDuration()
     {
         _duration = int.Parse(Console.ReadLine());
         return _duration;
     }
 
-    public int GetDuration()
+    protected int GetDuration()
     {
         return _duration;
     }
@@ -61,7 +61,7 @@ public class Activity
     }
 
     // spinner animation; parameter is for seconds that the spinner will go
-    public void WaitAnimation(int seconds)
+    protected void WaitAnimation(int seconds)
     {   
         DateTime currentTime = DateTime.Now;
         DateTime addedTime = currentTime.AddSeconds(seconds);
@@ -87,7 +87,7 @@ public class Activity
     }
 
     // countdown to display; parameters are for amount of time to countdown, message to display to user
-    public void Countdown(int time, string userMessage)
+    protected void Countdown(int time, string userMessage)
     {
         Console.Write($"{userMessage}...");
 

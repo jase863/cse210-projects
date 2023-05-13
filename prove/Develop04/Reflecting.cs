@@ -23,7 +23,7 @@ public class Reflecting : Activity
 
     }
   
-    public void DisplayStartPrompt()
+    private void DisplayStartPrompt()
     {   
 
         Console.WriteLine("\nConsider the following prompt: \n");
@@ -33,7 +33,7 @@ public class Reflecting : Activity
         Console.Clear();
     }
 
-    public void DisplayReflectPrompt(int duration)
+    private void DisplayReflectPrompt(int duration)
     {
         Console.WriteLine("\nNow, ponder each of the following questions as they relate to your experience.\n");
         Countdown(5, "You may begin in");
