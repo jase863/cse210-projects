@@ -33,13 +33,15 @@ public class Journal
         LoadFile(file);
     }
 
+   // loads a journal file and adds content to a list.
    public List<string> LoadFile(string fileToOpen)
    {
         Journal journalCSV = new Journal();
         List<string> strEntries = new List<string>();
         
         string [] savedEntry = System.IO.File.ReadAllLines(fileToOpen);
-        
+
+            //goes through each part of the CSV and splits it into its parts
             foreach (string entryPart in savedEntry)
             {
                 string [] data = entryPart.Split("|");
