@@ -34,7 +34,7 @@ class Program
         
         foreach(Video video in videoList)
         {
-            Console.WriteLine(($"{video._title} - {video._author} ({video._lengthInSeconds} seconds), {video.CommentsNumber()} comments\n\nComments:"));
+            Console.WriteLine(($"{video._title}  -  {video._author} ({video._lengthInSeconds} seconds), {video.CommentsNumber()} comments\n\nComments:"));
             
             foreach(Comment comment in video._commentsList)
             {
