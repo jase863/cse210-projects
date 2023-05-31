@@ -13,7 +13,7 @@ public class Lecture : Event
         _speaker = speaker;
         _capacity = capacity;
     }
-    
+
     public Lecture(string eventType, string eventTitle, string date) : base(eventType, eventTitle, date)
     {
 
@@ -21,6 +21,6 @@ public class Lecture : Event
 
     public override void DisplayFullDetails()
     {
-       Console.WriteLine($"\n{_eventType}\n{_eventTitle.ToUpper()}:\n{_description}.\nFeaturing Special Guest Speaker, {_speaker}.\nSeating is limited to {_capacity} persons.\n{_date} @ {_time}\n{_address}");
+       Console.WriteLine($"\n{_eventType}\n{_eventTitle.ToUpper()}:\n{_description}.\nFeaturing Special Guest Speaker, {_speaker}.\nSeating is limited to {_capacity} persons.\n{_date} @ {_time}\n{_address.FormattedAddress()}");
     }
 }
