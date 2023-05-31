@@ -68,9 +68,11 @@ public class AllGoals
                 goalsList[int.Parse(accomplished)-1].RecordEvent();
                 _totalScore += goalsList[int.Parse(accomplished)-1].GetEarnedPoints();
                 
-                if (goalsList[int.Parse(accomplished)-1].GetGoalType() == "Checklist" || goalsList[int.Parse(accomplished)-1].GetGoalType() == "Checklist")
+                if (goalsList[int.Parse(accomplished)-1].GetGoalType() == "ChecklistGoal" || goalsList[int.Parse(accomplished)-1].GetGoalType() == "SimpleGoal")
                 
-                {goalsList[int.Parse(accomplished)-1].SetComplete();}
+                    {
+                        goalsList[int.Parse(accomplished)-1].SetComplete();
+                    }
 
                 Console.WriteLine($"\nYou now have {_totalScore} points");
 

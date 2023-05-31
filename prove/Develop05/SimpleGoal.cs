@@ -22,8 +22,5 @@ public class SimpleGoal : Goal
         SetComplete();
         return _earnedPoints;
     }
-    // public void SetGoal()
-    // {
-    //     _goal = CreateNewGoal();
-    // }
+   
 }
