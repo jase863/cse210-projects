@@ -23,7 +23,7 @@ public class Product
         return _price * _quantity;
     } 
     
-    public string	GetProductID()
+    public string GetProductID()
     {
         return _productID;
     } 
