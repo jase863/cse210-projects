@@ -20,11 +20,6 @@ public class Running : Activity
         return _activityLength / _distance;
     }
 
-    public double GetDistance()
-    {
-        return _distance;
-    }
-
     public override void GetSummary()
     {
         Console.WriteLine($"{_date} {_activityType} ({_activityLength} min) - Distance: {_distance} miles, Speed: {CalculateSpeed():N2} mph, Pace: {CalculatePace():N2} min per mile");
